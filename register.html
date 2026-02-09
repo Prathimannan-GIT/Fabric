@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Fabric</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="assets/js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Standard Header -->
+    <header class="header">
+        <a href="index.html" class="logo"><span>🧵</span> Fabric</a>
+        <button class="mobile-toggle"><span></span><span></span><span></span></button>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Studio</a>
+            <a href="studio-plus.html" class="nav-link">Studio Plus</a>
+            <a href="collections.html" class="nav-link">Collections</a>
+            <a href="services.html" class="nav-link">Craft Services</a>
+            <a href="story.html" class="nav-link">The Story</a>
+            <a href="inspire.html" class="nav-link">Inspire</a>
+            <a href="connect.html" class="nav-link">Connect</a>
+            <div class="mobile-only" style="margin-top: 2rem;">
+                <a href="login.html" class="btn btn-outline" style="width: 100%; margin-bottom: 1rem;">Login</a>
+            </div>
+        </nav>
+        <div class="desktop-auth">
+            <a href="login.html" class="btn btn-outline">Login</a>
+        </div>
+    </header>
+
+    <!-- Auth Section with Background -->
+    <div class="auth-page-wrapper"
+        style="background-image: url('https://images.unsplash.com/photo-1616423640778-28d1b53229bd?q=80&w=1600&auto=format&fit=crop');">
+
+        <div class="auth-card-glass">
+            <div class="text-center" style="margin-bottom: 2rem;">
+                <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">Join The Club</h1>
+                <p style="margin-bottom: 0;">Start your creative journey with Fabric.</p>
+            </div>
+
+            <form action="dashboard.html">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div style="margin-bottom: 1rem;">
+                        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">First Name</label>
+                        <input type="text" placeholder="Jane" required style="margin-bottom: 0;">
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Last Name</label>
+                        <input type="text" placeholder="Doe" required style="margin-bottom: 0;">
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Email Address</label>
+                    <input type="email" placeholder="name@example.com" required style="margin-bottom: 0;">
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Password</label>
+                    <input type="password" placeholder="Create a password" required style="margin-bottom: 0;">
+                </div>
+
+                <button class="btn btn-primary" style="width: 100%;">Create Account</button>
+            </form>
+
+            <div style="position: relative; text-align: center; margin: 2rem 0;">
+                <hr style="border: 0; border-top: 1px solid #e5e7eb;">
+                <span
+                    style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: white; padding: 0 1rem; color: var(--text-muted); font-size: 0.9rem;">Or
+                    sign up with</span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <!-- Google Button -->
+                <button class="btn-social">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="social-icon">
+                    Google
+                </button>
+                <!-- Apple Button -->
+                <button class="btn-social">
+                    <img src="https://www.svgrepo.com/show/448206/apple.svg" alt="Apple" class="social-icon">
+                    Apple
+                </button>
+            </div>
+
+            <p style="text-align: center; margin-top: 2rem; font-size: 0.95rem;">
+                Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 700;">Sign
+                    in</a>
+            </p>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

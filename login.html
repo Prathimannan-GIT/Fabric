@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Fabric</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="assets/js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Standard Header -->
+    <header class="header">
+        <a href="index.html" class="logo"><span>🧵</span> Fabric</a>
+        <button class="mobile-toggle"><span></span><span></span><span></span></button>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Studio</a>
+            <a href="studio-plus.html" class="nav-link">Studio Plus</a>
+            <a href="collections.html" class="nav-link">Collections</a>
+            <a href="services.html" class="nav-link">Craft Services</a>
+            <a href="story.html" class="nav-link">The Story</a>
+            <a href="inspire.html" class="nav-link">Inspire</a>
+            <a href="connect.html" class="nav-link">Connect</a>
+            <div class="mobile-only" style="margin-top: 2rem;">
+                <a href="login.html" class="btn btn-outline" style="width: 100%; margin-bottom: 1rem;">Login</a>
+            </div>
+        </nav>
+        <div class="desktop-auth">
+            <a href="login.html" class="btn btn-outline">Login</a>
+        </div>
+    </header>
+
+    <!-- Auth Section with Background -->
+    <div class="auth-page-wrapper"
+        style="background-image: url('https://images.unsplash.com/photo-1616423640778-28d1b53229bd?q=80&w=1600&auto=format&fit=crop');">
+
+        <div class="auth-card-glass">
+            <div class="text-center" style="margin-bottom: 2rem;">
+                <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">Welcome Back</h1>
+                <p style="margin-bottom: 0;">Enter your details to access your workspace.</p>
+            </div>
+
+            <form action="dashboard.html">
+                <div style="margin-bottom: 1rem;">
+                    <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Email Address</label>
+                    <input type="email" placeholder="name@example.com" required style="margin-bottom: 0;">
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <label style="font-weight: 600;">Password</label>
+                        <a href="#" style="font-size: 0.9rem; color: var(--secondary);">Forgot?</a>
+                    </div>
+                    <input type="password" placeholder="••••••••" required style="margin-bottom: 0;">
+                </div>
+
+                <button class="btn btn-primary" style="width: 100%;">Sign In</button>
+            </form>
+
+            <div style="position: relative; text-align: center; margin: 2rem 0;">
+                <hr style="border: 0; border-top: 1px solid #e5e7eb;">
+                <span
+                    style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: white; padding: 0 1rem; color: var(--text-muted); font-size: 0.9rem;">Or
+                    continue with</span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <!-- Google Button -->
+                <button class="btn-social">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="social-icon">
+                    Google
+                </button>
+                <!-- Apple Button -->
+                <button class="btn-social">
+                    <img src="https://www.svgrepo.com/show/448206/apple.svg" alt="Apple" class="social-icon">
+                    Apple
+                </button>
+            </div>
+
+            <p style="text-align: center; margin-top: 2rem; font-size: 0.95rem;">
+                Don't have an account? <a href="register.html" style="color: var(--primary); font-weight: 700;">Sign up
+                    for free</a>
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Standard Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div><a href="index.html" class="logo" style="color: white; margin-bottom: 1rem;"><span>🧵</span> Fabric
+                    Craft</a></div>
+            <div>
+                <h4>Shop</h4><a href="#">New</a><a href="#">Best</a>
+            </div>
+            <div>
+                <h4>Company</h4><a href="#">About</a><a href="#">Contact</a>
+            </div>
+            <div>
+                <h4>Legal</h4><a href="#">Terms</a><a href="#">Privacy</a>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 4rem; color: rgba(255,255,255,0.4);">&copy; 2026 Fabric.</div>
+    </footer>
+
+</body>
+
+</html>

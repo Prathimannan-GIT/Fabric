@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Workspace | Fabric</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            background: var(--bg-surface);
+            overflow-x: hidden;
+        }
+
+        .sidebar {
+            width: 260px;
+            height: 100vh;
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .sidebar a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .main-content {
+            margin-left: 260px;
+            padding: 3rem;
+            flex: 1;
+            width: calc(100% - 260px);
+        }
+
+        .dash-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            /* Added background for premium feel */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 2rem 3rem;
+            border-radius: var(--radius-lg);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .toggle-dash {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.show {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 2rem;
+            }
+
+            .toggle-dash {
+                display: block;
+            }
+
+            .dash-header {
+                padding: 1.5rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <a href="index.html" class="logo" style="margin-bottom: 3rem; color: white;"><span>🧵</span> Fabric</a>
+
+        <nav style="flex: 1;">
+            <a href="#" class="active">📊 Overview</a>
+            <a href="#">📦 Orders</a>
+            <a href="#">❤️ Wishlist</a>
+            <a href="#">⚙️ Settings</a>
+        </nav>
+
+        <a href="index.html" style="margin-top: auto; color: #ff6b6b;">Log Out</a>
+    </aside>
+
+    <main class="main-content">
+        <header class="dash-header">
+            <div style="display: flex; align-items: center; gap: 1rem; width: 100%;">
+                <button class="toggle-dash"
+                    onclick="document.getElementById('sidebar').classList.toggle('show')">☰</button>
+                <div>
+                    <h1 style="margin: 0; text-align: left; color: white; font-size: 2rem;">Welcome back, Alex</h1>
+                    <p style="margin: 0; color: rgba(255,255,255,0.8); text-align: left;">Here's what's happening today.
+                    </p>
+                </div>
+            </div>
+            <div
+                style="width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);">
+                AH
+            </div>
+        </header>
+
+        <div class="grid-3">
+            <div class="card p-4">
+                <div class="card-body" style="align-items: flex-start; text-align: left;">
+                    <span style="color: var(--text-light); text-transform: uppercase; font-size: 0.8rem;">Total
+                        Orders</span>
+                    <div style="font-size: 2.5rem; font-weight: 700; margin: 0.5rem 0;">12</div>
+                    <p style="margin: 0; font-size: 0.9rem;">+2 this month</p>
+                </div>
+            </div>
+            <div class="card p-4">
+                <div class="card-body" style="align-items: flex-start; text-align: left;">
+                    <span
+                        style="color: var(--text-light); text-transform: uppercase; font-size: 0.8rem;">Wishlist</span>
+                    <div style="font-size: 2.5rem; font-weight: 700; margin: 0.5rem 0;">5</div>
+                    <p style="margin: 0; font-size: 0.9rem;">Items available</p>
+                </div>
+            </div>
+            <div class="card p-4">
+                <div class="card-body" style="align-items: flex-start; text-align: left;">
+                    <span style="color: var(--text-light); text-transform: uppercase; font-size: 0.8rem;">Credit</span>
+                    <div style="font-size: 2.5rem; font-weight: 700; margin: 0.5rem 0;">$50</div>
+                    <p style="margin: 0; font-size: 0.9rem;">Expires in 30 days</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="text-align: left; margin-top: 4rem;">Recent Activity</h2>
+        <div class="card p-4" style="margin-top: 1rem; text-align: left;">
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 1rem 0;">
+                <div>Order #10234</div>
+                <div style="color: var(--secondary);">Shipped</div>
+                <div>$124.00</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 1rem 0;">
+                <div>Order #10233</div>
+                <div style="color: green;">Delivered</div>
+                <div>$45.50</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 1rem 0;">
+                <div>Order #10230</div>
+                <div style="color: green;">Delivered</div>
+                <div>$200.00</div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
