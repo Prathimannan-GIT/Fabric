@@ -111,7 +111,17 @@
 <body>
 
     <aside class="sidebar" id="sidebar">
-        <a href="index.html" class="logo" style="margin-bottom: 3rem; color: white;"><span>🧵</span> Fabric</a>
+        <a href="index.html" class="logo" style="margin-bottom: 3rem; color: white;">
+            <span>
+                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="13" rx="2" ry="2"></rect>
+                    <circle cx="12" cy="13.5" r="4"></circle>
+                    <path d="M16 4h4v3h-4z"></path>
+                    <circle cx="12" cy="13.5" r="1.5" fill="currentColor"></circle>
+                </svg>
+            </span> Fabric
+        </a>
 
         <nav style="flex: 1;">
             <a href="#" class="active">📊 Overview</a>
@@ -135,7 +145,7 @@
                 </div>
             </div>
             <div
-                style="width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);">
+                style="position: relative; width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary); overflow: hidden; border: 2px solid rgba(255,255,255,0.2);">
                 AH
             </div>
         </header>
