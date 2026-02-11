@@ -10,39 +10,263 @@
         rel="stylesheet">
     <script src="assets/js/script.js" defer></script>
     <style>
-        .split-hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+        .hero-plus {
+            position: relative;
             min-height: 85vh;
-        }
-
-        .split-content {
-            padding: 4rem;
             display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            background: var(--primary);
-            color: white;
-        }
-
-        .split-image {
-            background: url('https://images.unsplash.com/photo-1620799140408-ed5341cd2431?q=80&w=1600&auto=format&fit=crop');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1620799140408-ed5341cd2431?q=80&w=1600&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
+            overflow: hidden;
+            padding: 4rem 1.5rem;
+            text-align: center;
         }
 
-        @media(max-width: 768px) {
-            .split-hero {
+        .hero-plus-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            color: white;
+            margin: 0 auto;
+        }
+
+        .hero-plus-content h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .hero-plus-content p {
+            text-align: center;
+            margin: 0 auto 3rem auto;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            max-width: 60ch;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-plus .btn {
+            min-width: 200px;
+            padding: 1.25rem 2.5rem;
+        }
+
+        /* Responsive Hero */
+        @media (max-width: 768px) {
+            .hero-plus {
+                min-height: 70vh;
+                padding: 6rem 1.5rem;
+                background-attachment: scroll;
+            }
+
+            .hero-plus-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .hero-cta-group .btn {
+                width: 100%;
+            }
+        }
+
+        /* Spotlight Section Styling */
+        .studio-spotlight,
+        .vault-section {
+            padding: 6rem 0;
+            overflow: hidden;
+        }
+
+        .vault-main-image {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--secondary);
+            box-shadow: var(--shadow-lg);
+            display: block;
+        }
+
+        .spotlight-process-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .spotlight-process-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .spotlight-main-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Stats Grid Styling */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            width: 100%;
+        }
+
+        .stat-item {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 1024px) {
+            .hero-plus::after {
+                background: linear-gradient(90deg, var(--primary) 50%, rgba(10, 10, 10, 0.7) 100%);
+            }
+
+            .hero-plus-content {
+                max-width: 500px;
+            }
+
+            /* Improve grid-2 sections for tablet */
+            .studio-spotlight .grid-2,
+            #vault-section .grid-2 {
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            .studio-spotlight .grid-2,
+            #vault-section .grid-2 {
                 grid-template-columns: 1fr;
+                text-align: center;
             }
 
-            .split-image {
-                height: 300px;
+            .spotlight-content h2,
+            .spotlight-content p {
+                text-align: center !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .spotlight-main-image {
+                height: 400px;
+                margin-top: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-plus {
+                min-height: auto;
+                padding: 6rem 1.5rem;
+                text-align: center;
+                flex-direction: column;
+            }
+
+            .hero-plus::before {
+                width: 100%;
+                height: 40%;
+                position: relative;
                 order: -1;
+                border-radius: var(--radius-lg);
+                margin-bottom: 2rem;
             }
 
-            .split-content {
-                padding: 3rem 1.5rem;
+            .hero-plus::after {
+                display: none;
+            }
+
+            .hero-plus-content {
+                max-width: 100%;
+            }
+
+            .hero-plus-content h1,
+            .hero-plus-content p {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-cta-group {
+                justify-content: center;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-cta-group .btn {
+                width: 100%;
+            }
+        }
+
+        /* Ultra-small mobile fixes */
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero-plus {
+                padding: 4rem 1rem;
+            }
+
+            .hero-plus-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-plus-content p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -74,27 +298,92 @@
             <a href="connect.html" class="nav-link">Connect</a>
             <a href="dashboard.html" class="nav-link">Dashboard</a>
             <div class="mobile-only" style="margin-top: 2rem; border-top: 1px solid #eee; padding-top: 2rem;">
-                <a href="login.html" class="btn btn-outline" style="width: 100%; margin-bottom: 1rem;">Login</a>
+                <a href="login.html" class="btn btn-outline" style="width: 100%; margin-bottom: 1rem;">Join</a>
             </div>
         </nav>
         <div class="desktop-auth" style="display: flex; gap: 1rem;">
-            <a href="login.html" class="btn btn-outline">Login</a>
+            <a href="login.html" class="btn btn-outline">Join</a>
         </div>
     </header>
 
     <main>
-        <section class="split-hero">
-            <div class="split-content">
-                <h1 style="text-align: left; color: white;">The Studio Plus Experience</h1>
-                <p style="text-align: left; color: rgba(255,255,255,0.8); margin-left: 0;">Unlock exclusive access to
-                    limited-edition fabrics, masterclasses, and priority support.</p>
-                <div style="margin-top: 2rem;">
-                    <a href="#join" class="btn btn-secondary">Join Membership</a>
-                    <a href="#benefits" class="btn btn-outline"
-                        style="border-color: white; color: white; margin-left: 1rem;">Learn More</a>
+        <section class="hero-plus">
+            <div class="container">
+                <div class="hero-plus-content">
+                    <h1>The Studio Plus Experience</h1>
+                    <p>Unlock exclusive access to limited-edition fabrics, masterclasses, and priority support.</p>
+                    <div class="hero-cta-group">
+                        <a href="#join" class="btn btn-secondary">Join Membership</a>
+                        <a href="#benefits" class="btn btn-outline" style="border-color: white; color: white;">Learn
+                            More</a>
+                    </div>
                 </div>
             </div>
-            <div class="split-image"></div>
+        </section>
+
+        <!-- Features Section - Added to fill empty space -->
+        <section class="section bg-light"
+            style="padding: 4rem 2rem; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 3rem;">
+                    <h2 style="color: var(--primary); margin-bottom: 1rem;">Elevate Your Craft</h2>
+                    <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Everything you need to
+                        transform your creative vision into reality, all in one membership.</p>
+                </div>
+
+                <div class="features-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="feature-card"
+                        style="background: white; padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div
+                            style="width: 60px; height: 60px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                            <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" />
+                            </svg>
+                        </div>
+                        <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.25rem;">Exclusive Materials
+                        </h3>
+                        <p style="color: var(--text-muted); margin-bottom: 0; line-height: 1.6;">Access rare fabrics and
+                            limited-edition collections not available to the public.</p>
+                    </div>
+
+                    <div class="feature-card"
+                        style="background: white; padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div
+                            style="width: 60px; height: 60px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                            <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                            </svg>
+                        </div>
+                        <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.25rem;">Expert Guidance</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 0; line-height: 1.6;">Learn from industry
+                            masters through exclusive masterclasses and workshops.</p>
+                    </div>
+
+
+                </div>
+
+                <!-- Stats Row -->
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Exclusive Fabrics</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Expert Tutorials</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">20%</div>
+                        <div class="stat-label">Member Discount</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Priority Support</div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="section" id="benefits">
@@ -115,23 +404,19 @@
                             <p>Unlimited access to video tutorials from industry experts.</p>
                         </div>
                     </div>
-                    <div class="card p-4">
-                        <div class="card-body">
-                            <h3>Trade Pricing</h3>
-                            <p>Save 20% on all orders with no minimum purchase.</p>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </section>
 
-        <section class="section bg-light"
+        <section class="section bg-light" id="vault-section"
             style="background-image: url('https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=1600&auto=format&fit=crop'); background-attachment: fixed; background-size: cover; color: white; position: relative;">
             <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.7);"></div>
             <div class="container" style="position: relative; z-index: 2;">
                 <div class="grid-2" style="align-items: center;">
-                    <div
-                        style="height: 400px; background: url('https://images.unsplash.com/photo-1584218840250-7d72023cb365?auto=format&fit=crop&q=80') center/cover; border-radius: var(--radius-lg); border: 2px solid var(--secondary); position: relative;">
+                    <div class="vault-image-container">
+                        <img src="https://s30964.pcdn.co/introspective-magazine/wp-content/uploads/2016/09/patternsheader-1-1024x512.jpg"
+                            alt="Design Vault Patterns" class="vault-main-image">
                     </div>
                     <div style="text-align: left;">
                         <h2 style="text-align: left; color: white;">The Design Vault</h2>
@@ -204,32 +489,28 @@
             </div>
         </section>
 
-        <!-- New Section 2: Studio Spotlight (With Placeholders) -->
-        <section class="section bg-light">
+        <!-- Studio Spotlight -->
+        <section class="section bg-light studio-spotlight">
             <div class="container">
                 <div class="grid-2" style="align-items: center;">
-                    <div>
-                        <div class="grid-2" style="align-items: center;">
-                            <div>
-                                <h2 style="text-align: left;">Creative Spotlight</h2>
-                                <p style="text-align: left; margin-left: 0;">Each month we feature a member of our
-                                    community and their work. This month, we're highlighting Elena Rossi's "Sustainable
-                                    Summer" collection, created entirely with Studio Plus organic linens.</p>
-                                <div class="grid-2" style="gap: 1rem; margin-top: 2rem;">
-                                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=400&fit=crop"
-                                        alt="Elena's Work"
-                                        style="width: 100%; border-radius: var(--radius-md); height: 180px; object-fit: cover;">
-                                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=400&fit=crop"
-                                        alt="Elena's Process"
-                                        style="width: 100%; border-radius: var(--radius-md); height: 180px; object-fit: cover;">
-                                </div>
-                            </div>
-                            <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=800&fit=crop"
-                                alt="Elena Rossi"
-                                style="width: 100%; border-radius: var(--radius-lg); height: 450px; object-fit: cover; box-shadow: var(--shadow-lg);">
+                    <div class="spotlight-content">
+                        <h2 style="text-align: left;">Creative Spotlight</h2>
+                        <p style="text-align: left; margin-left: 0;">Each month we feature a member of our
+                            community and their work. This month, we're highlighting Elena Rossi's "Sustainable
+                            Summer" collection, created entirely with Studio Plus organic linens.</p>
+                        <div class="spotlight-process-grid">
+                            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=400&fit=crop"
+                                alt="Elena's Work">
+                            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=400&fit=crop"
+                                alt="Elena's Process">
                         </div>
                     </div>
+                    <div class="spotlight-image-container">
+                        <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=800&fit=crop"
+                            alt="Elena Rossi" class="spotlight-main-image">
+                    </div>
                 </div>
+            </div>
         </section>
 
         <!-- New Section 3: FAQ -->

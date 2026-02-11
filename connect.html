@@ -35,18 +35,18 @@
             <a href="connect.html" class="nav-link active">Connect</a>
             <a href="dashboard.html" class="nav-link">Dashboard</a>
             <div class="mobile-only" style="margin-top: 2rem;">
-                <a href="login.html" class="btn btn-outline" style="width: 100%; margin-bottom: 1rem;">Login</a>
+                <a href="login.html" class="btn btn-outline" style="width: 100%; margin-bottom: 1rem;">Join</a>
             </div>
         </nav>
         <div class="desktop-auth" style="display: flex; gap: 1rem;">
-            <a href="login.html" class="btn btn-outline">Login</a>
+            <a href="login.html" class="btn btn-outline">Join</a>
         </div>
     </header>
 
     <main>
         <!-- Page Header with Background -->
         <div class="page-header"
-            style="background-image: url('https://images.unsplash.com/photo-1590117036660-c3d328373303?q=80&w=1600&auto=format&fit=crop');">
+            style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop');">
             <div class="page-header-content">
                 <h1>Contact Us</h1>
                 <p>We're here to help you create.</p>
@@ -54,86 +54,189 @@
         </div>
 
         <div class="container section">
-            <div class="grid-2" style="gap: 3rem; align-items: start;">
-                <!-- Form -->
-                <div class="card" style="padding: 2.5rem;">
-                    <h2 style="margin-bottom: 2rem; text-align: left;">Send us a Message</h2>
-                    <form onsubmit="event.preventDefault(); alert('Message sent!');">
-                        <label
-                            style="display: block; margin-bottom: 0.5rem; font-weight: 600; text-align: left; color: var(--text-main);">Name</label>
-                        <input type="text" placeholder="Your Name" required>
-
-                        <label
-                            style="display: block; margin-bottom: 0.5rem; font-weight: 600; text-align: left; color: var(--text-main);">Email</label>
-                        <input type="email" placeholder="Your Email" required>
-
-                        <label
-                            style="display: block; margin-bottom: 0.5rem; font-weight: 600; text-align: left; color: var(--text-main);">Subject</label>
-                        <select
-                            style="margin-bottom: 1rem; width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: var(--radius-md); font-family: inherit;">
-                            <option>General Inquiry</option>
-                            <option>Order Support</option>
-                            <option>Wholesale</option>
-                        </select>
-
-                        <label
-                            style="display: block; margin-bottom: 0.5rem; font-weight: 600; text-align: left; color: var(--text-main);">Message</label>
-                        <textarea rows="5" placeholder="How can we help?" required></textarea>
-
-                        <button class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Send Message</button>
-                    </form>
-                </div>
-
-                <!-- Info -->
-                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    <div class="card" style="padding: 2rem;">
-                        <h3 style="text-align: left; margin-bottom: 1rem;">Headquarters</h3>
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=400&fit=crop"
-                            alt="Headquarters"
-                            style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1rem;">
-                        <p style="margin: 0; text-align: left; color: var(--text-muted);">123 Fashion Avenue<br>Design
-                            District, NY 10001<br>United States</p>
+            <!-- Quick Contact cards -->
+            <div class="grid-3" style="margin-bottom: 4rem; gap: 1.5rem;">
+                <div class="card p-4" style="text-align: center;">
+                    <div class="card-body">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">✉️</div>
+                        <h3>Email Us</h3>
+                        <p style="color: var(--text-muted);">General: hello@fabric.com<br>Support: help@fabric.com</p>
                     </div>
-                    <div class="card" style="padding: 2rem;">
-                        <h3 style="text-align: left; margin-bottom: 1rem;">Join the Team</h3>
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=400&fit=crop"
-                            alt="Join Team"
-                            style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1rem;">
-                        <p style="margin: 0; text-align: left; color: var(--text-muted);">We are always looking for new
-                            talent to join our creative journey.</p>
-                        <a href="#" class="btn btn-outline" style="width: 100%; margin-top: 1rem;">View Careers</a>
+                </div>
+                <div class="card p-4" style="text-align: center;">
+                    <div class="card-body">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">📍</div>
+                        <h3>Visit Us</h3>
+                        <p style="color: var(--text-muted);">123 Fashion Avenue<br>New York, NY 10001</p>
+                    </div>
+                </div>
+                <div class="card p-4" style="text-align: center;">
+                    <div class="card-body">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">📞</div>
+                        <h3>Call Us</h3>
+                        <p style="color: var(--text-muted);">Main: +1 (555) 123-4567<br>Mon-Fri, 9am - 6pm EST</p>
                     </div>
                 </div>
             </div>
 
-            <!-- FAQ Section -->
-            <div class="section bg-light" style="margin-top: 4rem; padding: 3rem; border-radius: var(--radius-lg);">
+            <div class="grid-2" style="gap: 4rem; align-items: start; margin-bottom: 6rem;">
+                <!-- Redesigned Form -->
+                <div>
+                    <h2 style="margin-bottom: 1rem; text-align: left;">Let's Weave Together</h2>
+                    <p style="margin-bottom: 2.5rem; color: var(--text-muted);">Have a custom request or just want to
+                        say hi? Our team typically responds within 24 hours.</p>
+                    <form onsubmit="event.preventDefault(); alert('Message sent!');" class="contact-form">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div class="form-group">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">First
+                                    Name</label>
+                                <input type="text" placeholder="Jane" required
+                                    style="width: 100%; padding: 1rem; border: 1.5px solid #eee; border-radius: var(--radius-md); font-family: inherit;">
+                            </div>
+                            <div class="form-group">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Last
+                                    Name</label>
+                                <input type="text" placeholder="Doe" required
+                                    style="width: 100%; padding: 1rem; border: 1.5px solid #eee; border-radius: var(--radius-md); font-family: inherit;">
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email
+                                Address</label>
+                            <input type="email" placeholder="jane@example.com" required
+                                style="width: 100%; padding: 1rem; border: 1.5px solid #eee; border-radius: var(--radius-md); font-family: inherit;">
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Area of
+                                Interest</label>
+                            <select
+                                style="width: 100%; padding: 1rem; border: 1.5px solid #eee; border-radius: var(--radius-md); font-family: inherit; background: white;">
+                                <option>Custom Weaving Inquiry</option>
+                                <option>Wholesale Partnerships</option>
+                                <option>Technical Support</option>
+                                <option>Press & Media</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 2rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Your Message</label>
+                            <textarea rows="6" placeholder="Tell us about your project..." required
+                                style="width: 100%; padding: 1rem; border: 1.5px solid #eee; border-radius: var(--radius-md); font-family: inherit; resize: vertical;"></textarea>
+                        </div>
+
+                        <button class="btn btn-primary" style="width: 100%; padding: 1.25rem;">Ship Message</button>
+                    </form>
+                </div>
+
+                <!-- Map & Social -->
+                <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+                    <!-- Map Card -->
+                    <div class="card" style="overflow: hidden; border: none; box-shadow: var(--shadow-lg);">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.412191724013!2d-73.98731968459418!3d40.75889497932663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1667458234567!5m2!1sen!2sus"
+                            width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <div class="p-4" style="background: white; text-align: left;">
+                            <h3 style="margin-bottom: 0.5rem;">Fabric HQ</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Located in the heart of
+                                the Design District.</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Card -->
+                    <div class="card p-5" style="background: var(--primary); color: white;">
+                        <h3 style="color: white; margin-bottom: 1.5rem; text-align: left;">Connect With Us</h3>
+                        <p style="color: rgba(255,255,255,0.8); text-align: left; margin-bottom: 2rem;">Follow our
+                            journey and get daily design inspiration from our studio.</p>
+                        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                            <a href="#"
+                                style="width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s; text-decoration: none;"
+                                onmouseover="this.style.background='var(--secondary)'"
+                                onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                            </a>
+                            <a href="#"
+                                style="width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s; text-decoration: none;"
+                                onmouseover="this.style.background='var(--secondary)'"
+                                onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771-4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
+                            </a>
+                            <a href="#"
+                                style="width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s; text-decoration: none;"
+                                onmouseover="this.style.background='var(--secondary)'"
+                                onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section Redesigned -->
+            <div class="section" style="padding: 6rem 0; border-top: 1px solid #eee;">
                 <div style="max-width: 800px; margin: 0 auto;">
-                    <h2 style="margin-bottom: 2rem;">Frequently Asked Questions</h2>
+                    <div class="text-center" style="margin-bottom: 3.5rem;">
+                        <span
+                            style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Common
+                            Queries</span>
+                        <h2 style="margin-top: 1rem;">Frequent Questions</h2>
+                    </div>
 
-                    <details
-                        style="margin-bottom: 1rem; text-align: left; padding: 1.5rem; background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); cursor: pointer;">
-                        <summary style="font-weight: 600; font-size: 1.1rem; list-style: none; color: var(--primary);">
-                            Do you ship internationally?</summary>
-                        <p style="margin-top: 1rem; margin-bottom: 0; color: var(--text-muted); line-height: 1.6;">Yes,
-                            we ship to over 50 countries worldwide including UK, Australia, and Canada.</p>
-                    </details>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <details
+                            style="background: var(--bg-light); padding: 1.5rem; border-radius: var(--radius-lg); cursor: pointer; transition: 0.3s; border: 1px solid transparent;"
+                            onmouseover="this.style.borderColor='var(--secondary)'"
+                            onmouseout="this.style.borderColor='transparent'">
+                            <summary
+                                style="font-weight: 700; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                                Do you ship internationally?
+                                <span style="font-size: 1.5rem; color: var(--secondary);">+</span>
+                            </summary>
+                            <p style="margin-top: 1.5rem; color: var(--text-muted); line-height: 1.7;">Yes, we ship to
+                                over 50 countries worldwide. Shipping costs and delivery times vary by location and will
+                                be calculated at checkout.</p>
+                        </details>
 
-                    <details
-                        style="margin-bottom: 1rem; text-align: left; padding: 1.5rem; background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); cursor: pointer;">
-                        <summary style="font-weight: 600; font-size: 1.1rem; list-style: none; color: var(--primary);">
-                            Can I order fabric samples?</summary>
-                        <p style="margin-top: 1rem; margin-bottom: 0; color: var(--text-muted); line-height: 1.6;">
-                            Absolutely. You can order swatches for any fabric on our collections page.</p>
-                    </details>
+                        <details
+                            style="background: var(--bg-light); padding: 1.5rem; border-radius: var(--radius-lg); cursor: pointer; transition: 0.3s; border: 1px solid transparent;"
+                            onmouseover="this.style.borderColor='var(--secondary)'"
+                            onmouseout="this.style.borderColor='transparent'">
+                            <summary
+                                style="font-weight: 700; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                                Can I order fabric samples?
+                                <span style="font-size: 1.5rem; color: var(--secondary);">+</span>
+                            </summary>
+                            <p style="margin-top: 1.5rem; color: var(--text-muted); line-height: 1.7;">Absolutely. We
+                                encourage sampling to see the texture and color in person. You can order swatches
+                                directly from any product page.</p>
+                        </details>
 
-                    <details
-                        style="text-align: left; padding: 1.5rem; background: white; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); cursor: pointer;">
-                        <summary style="font-weight: 600; font-size: 1.1rem; list-style: none; color: var(--primary);">
-                            What is your return policy?</summary>
-                        <p style="margin-top: 1rem; margin-bottom: 0; color: var(--text-muted); line-height: 1.6;">We
-                            accept returns within 30 days of purchase for uncut, unwashed fabrics.</p>
-                    </details>
+                        <details
+                            style="background: var(--bg-light); padding: 1.5rem; border-radius: var(--radius-lg); cursor: pointer; transition: 0.3s; border: 1px solid transparent;"
+                            onmouseover="this.style.borderColor='var(--secondary)'"
+                            onmouseout="this.style.borderColor='transparent'">
+                            <summary
+                                style="font-weight: 700; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                                What is your return policy?
+                                <span style="font-size: 1.5rem; color: var(--secondary);">+</span>
+                            </summary>
+                            <p style="margin-top: 1.5rem; color: var(--text-muted); line-height: 1.7;">We accept returns
+                                on uncut, unwashed fabrics within 30 days of purchase. Custom cut fabrics have a
+                                restocking fee of 15%.</p>
+                        </details>
+                    </div>
                 </div>
             </div>
         </div>

@@ -60,14 +60,14 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 3rem;
-            /* Added background for premium feel */
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=1600&auto=format&fit=crop');
+            /* Unique premium background for dashboard */
+            background: linear-gradient(rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.8)), url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1600&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            padding: 2rem 3rem;
+            padding: 2.5rem 3rem;
             border-radius: var(--radius-lg);
             color: white;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
         }
 
         .toggle-dash {
@@ -103,6 +103,33 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1rem;
+            }
+
+            .dash-header {
+                padding: 1rem;
+            }
+
+            .dash-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .dash-header p {
+                font-size: 0.9rem;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .card p {
+                font-size: 0.85rem;
             }
         }
     </style>
