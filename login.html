@@ -45,11 +45,18 @@
                 </div>
 
                 <div style="margin-bottom: 1.5rem;">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
                         <label style="font-weight: 600;">Password</label>
-                        <a href="#" style="font-size: 0.9rem; color: var(--secondary);">Forgot Password?</a>
                     </div>
-                    <input type="password" placeholder="••••••••" required style="margin-bottom: 0;">
+                    <input type="password" placeholder="••••••••" required style="margin-bottom: 0.5rem;">
+                    
+                    <div class="remember-wrapper">
+    <label class="remember-label">
+        <input type="checkbox" id="remember" name="remember">
+        <span>Remember me</span>
+    </label>
+</div>
+    
                 </div>
 
                 <button class="btn btn-primary" style="width: 100%;">Join</button>
@@ -82,7 +89,7 @@
             </div>
 
             <p style="text-align: center; margin-top: 2rem; font-size: 0.95rem;">
-                Don't have an account? <a href="register.html" style="color: var(--primary); font-weight: 700;">Sign up
+                Don't have an account? <a href="register.html" style="color: var(--primary); font-weight: 700; text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='var(--secondary)'" onmouseout="this.style.color='var(--primary)'">Sign up
                     for free</a>
             </p>
         </div>

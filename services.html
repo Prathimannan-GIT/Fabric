@@ -123,38 +123,145 @@
             </div>
         </div>
 
-        <!-- Pricing Table -->
-        <div class="section bg-light">
-            <div class="container text-center">
-                <h2>Service Packages</h2>
-                <div class="grid-3">
-                    <div class="card p-4" style="border: 1px solid #ddd;">
-                        <div class="card-body">
-                            <h3>Basic Hemming</h3>
-                            <div style="font-size: 2.5rem; font-weight: 700; margin: 1rem 0;">$20</div>
-                            <p>Pants and skirts shortening.</p>
-                            <button class="btn btn-outline">Book Now</button>
+        <!-- Service Packages -->
+        <div class="section bg-light" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 3rem;">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-dark);">Service Packages</h2>
+                    <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Professional craft services tailored to your needs with transparent pricing</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto;" class="service-packages-grid">
+                    <!-- Basic Hemming -->
+                    <div class="service-card-modern" style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid transparent; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #28a745, #20c997);"></div>
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #28a745, #20c997); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem;">✂️</div>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-dark);">Basic Hemming</h3>
+                            <div style="font-size: 3rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;">$20</div>
+                            <p style="color: var(--text-muted);">Quick & precise</p>
                         </div>
+                        <ul style="list-style: none; padding: 0; margin: 2rem 0;">
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span>Pants shortening</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span>Skirts hemming</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span>Sleeve adjustments</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; display: flex; align-items: center;">
+                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span>Same-day service</span>
+                            </li>
+                        </ul>
+                        <a href="connect.html" class="btn btn-outline" style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 8px;">Book Now</a>
                     </div>
-                    <div class="card p-4" style="border: 1px solid var(--primary);">
-                        <div class="card-body">
-                            <h3>Full Alteration</h3>
-                            <div style="font-size: 2.5rem; font-weight: 700; margin: 1rem 0;">$85</div>
-                            <p>Complete fit adjustment for suits/dresses.</p>
-                            <button class="btn btn-primary">Best Value</button>
+
+                    <!-- Full Alteration (Featured) -->
+                    <div class="service-card-modern featured" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; padding: 2.5rem; box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3); border: 2px solid #667eea; transform: scale(1.05); position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: -20px; right: -20px; background: #ff6b6b; color: white; padding: 0.5rem 2rem; transform: rotate(45deg); font-size: 0.8rem; font-weight: 600;">POPULAR</div>
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <div style="width: 70px; height: 70px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.8rem;">🧵</div>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: white;">Full Alteration</h3>
+                            <div style="font-size: 3.5rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">$85</div>
+                            <p style="color: rgba(255,255,255,0.9);">Complete fit perfection</p>
                         </div>
+                        <ul style="list-style: none; padding: 0; margin: 2rem 0;">
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;">
+                                <span style="color: #fff; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span style="color: white;">Suit adjustments</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;">
+                                <span style="color: #fff; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span style="color: white;">Dress resizing</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;">
+                                <span style="color: #fff; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span style="color: white;">Body contouring</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;">
+                                <span style="color: #fff; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span style="color: white;">Premium fabrics</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; display: flex; align-items: center;">
+                                <span style="color: #fff; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span style="color: white;">Express delivery</span>
+                            </li>
+                        </ul>
+                        <a href="connect.html" class="btn" style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 8px; background: white; color: #667eea; font-weight: 600;">Best Value</a>
                     </div>
-                    <div class="card p-4" style="border: 1px solid #ddd;">
-                        <div class="card-body">
-                            <h3>Custom Dress</h3>
-                            <div style="font-size: 2.5rem; font-weight: 700; margin: 1rem 0;">$300+</div>
-                            <p>Designed and sewn from scratch.</p>
-                            <button class="btn btn-outline">Consult</button>
+
+                    <!-- Custom Dress -->
+                    <div class="service-card-modern" style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid transparent; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #ffd700, #ffed4e);"></div>
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ffd700, #ffed4e); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem;">👗</div>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-dark);">Custom Dress</h3>
+                            <div style="font-size: 3rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;">$300+</div>
+                            <p style="color: var(--text-muted);">Bespoke creation</p>
                         </div>
+                        <ul style="list-style: none; padding: 0; margin: 2rem 0;">
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span>Custom design</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span>Premium materials</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span>Multiple fittings</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; display: flex; align-items: center;">
+                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span>Designer consultation</span>
+                            </li>
+                        </ul>
+                        <a href="connect.html" class="btn btn-outline" style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 8px;">Consult</a>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Add Responsive CSS -->
+        <style>
+        /* Responsive Service Packages Grid */
+        @media (min-width: 1025px) {
+            .service-packages-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 2rem !important;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .service-packages-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 1.5rem !important;
+            }
+            
+            .service-card-modern.featured {
+                transform: scale(1) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-packages-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            .service-card-modern {
+                padding: 2rem !important;
+            }
+        }
+        </style>
+
     </main>
 
     <footer class="footer">

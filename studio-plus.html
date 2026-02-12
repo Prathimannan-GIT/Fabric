@@ -16,13 +16,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1620799140408-ed5341cd2431?q=80&w=1600&auto=format&fit=crop');
+            background-image: url('https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1920&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            overflow: hidden;
-            padding: 4rem 1.5rem;
+            color: white;
             text-align: center;
+        }
+
+        .hero-plus::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
         }
 
         .hero-plus-content {
@@ -210,12 +220,13 @@
             }
 
             .hero-plus::before {
-                width: 100%;
-                height: 40%;
-                position: relative;
-                order: -1;
-                border-radius: var(--radius-lg);
-                margin-bottom: 2rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.6);
+                z-index: 1;
             }
 
             .hero-plus::after {
@@ -267,6 +278,60 @@
 
             .hero-plus-content p {
                 font-size: 1rem;
+            }
+        }
+
+        /* Responsive Membership Plans Grid */
+        @media (min-width: 1025px) {
+            .membership-grid {
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 2rem !important;
+                overflow-x: auto !important;
+            }
+            
+            .membership-grid .price-card-modern {
+                flex: 0 0 auto !important;
+                min-width: 320px !important;
+                max-width: 380px !important;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .membership-grid {
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 1.5rem !important;
+                overflow-x: auto !important;
+            }
+            
+            .membership-grid .price-card-modern {
+                flex: 0 0 auto !important;
+                min-width: 300px !important;
+                max-width: 350px !important;
+            }
+            
+            .price-card-modern.featured {
+                transform: scale(1) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .membership-grid {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+                overflow-x: visible !important;
+            }
+            
+            .membership-grid .price-card-modern {
+                flex: unset !important;
+                min-width: unset !important;
+                max-width: unset !important;
+            }
+            
+            .price-card-modern {
+                padding: 2rem !important;
             }
         }
     </style>
@@ -400,8 +465,14 @@
                     </div>
                     <div class="card p-4">
                         <div class="card-body">
-                            <h3>Masterclasses</h3>
+                            <h3>Master classes</h3>
                             <p>Unlimited access to video tutorials from industry experts.</p>
+                        </div>
+                    </div>
+                    <div class="card p-4">
+                        <div class="card-body">
+                            <h3>Premium classes</h3>
+                            <p>Limited training to video sessions from Clients.</p>
                         </div>
                     </div>
 
@@ -438,52 +509,110 @@
         </section>
 
         <!-- New Section 1: Membership Plans -->
-        <section class="section" id="join">
+        <section class="section" id="join" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
             <div class="container">
-                <div class="text-center">
-                    <h2>Membership Plans</h2>
-                    <p>Choose the level that fits your creative journey.</p>
+                <div class="text-center" style="margin-bottom: 3rem;">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-dark);">Membership Plans</h2>
+                    <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Choose the perfect plan for your creative journey and unlock exclusive benefits</p>
                 </div>
-                <div class="grid-3">
-                    <div class="card p-4 price-card">
-                        <div class="card-body">
-                            <h3>Basic Studio</h3>
-                            <div class="price">Free</div>
-                            <p>Essential tools for hobbyists.</p>
-                            <ul style="list-style: none; margin-bottom: 2rem; color: var(--text-muted);">
-                                <li>✓ Standard Catalog</li>
-                                <li>✓ Basic Tutorials</li>
-                                <li>✓ Community Support</li>
-                            </ul>
-                            <a href="register.html" class="btn btn-outline" style="width: 100%;">Get Started</a>
+                
+                <div style="display: flex; gap: 2rem; max-width: 1200px; margin: 0 auto; overflow-x: auto;" class="membership-grid">
+                    <!-- Basic Studio -->
+                    <div class="price-card-modern" style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid transparent; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #6c757d, #868e96);"></div>
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #6c757d, #868e96); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem;">🎨</div>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-dark);">Basic Studio</h3>
+                            <div style="font-size: 3rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;">Free</div>
+                            <p style="color: var(--text-muted);">Perfect for getting started</p>
                         </div>
+                        <ul style="list-style: none; padding: 0; margin: 2rem 0;">
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span>Standard Catalog </span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span>Basic Video Tutorials</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span>Community Forum </span>
+                            </li>
+                            <li style="padding: 0.75rem 0; display: flex; align-items: center; opacity: 0.6;">
+                                <span style="color: #dc3545; margin-right: 0.75rem; font-size: 1.2rem;">✗</span>
+                                <span>Priority Support</span>
+                            </li>
+                        </ul>
+                        <a href="register.html" class="btn btn-outline" style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 8px;">Get Started</a>
                     </div>
-                    <div class="card p-4 price-card featured">
-                        <div class="card-body">
-                            <h3>Studio Plus</h3>
-                            <div class="price">$19<span>/mo</span></div>
-                            <p>Everything in Basic, plus more.</p>
-                            <ul style="list-style: none; margin-bottom: 2rem; color: var(--text-muted);">
-                                <li>✓ Priority Vault Access</li>
-                                <li>✓ 20% Trade Discount</li>
-                                <li>✓ Expert Masterclasses</li>
-                                <li>✓ Monthly Swatch Kit</li>
-                            </ul>
-                            <a href="register.html" class="btn btn-primary" style="width: 100%;">Join Now</a>
+
+                    <!-- Studio Plus (Featured) -->
+                    <div class="price-card-modern featured" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; padding: 2.5rem; box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3); border: 2px solid #667eea; transform: scale(1.05); position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: -20px; right: -20px; background: #ff6b6b; color: white; padding: 0.5rem 2rem; transform: rotate(45deg); font-size: 0.8rem; font-weight: 600;">POPULAR</div>
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <div style="width: 70px; height: 70px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.8rem;">⭐</div>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: white;">Studio Plus</h3>
+                            <div style="font-size: 3.5rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">$19<span style="font-size: 1.2rem; opacity: 0.8;">/mo</span></div>
+                            <p style="color: rgba(255,255,255,0.9);">Most popular choice</p>
                         </div>
+                        <ul style="list-style: none; padding: 0; margin: 2rem 0;">
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;">
+                                <span style="color: #fff; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span style="color: white;">Everything in Basic</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;">
+                                <span style="color: #fff; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span style="color: white;">Priority Vault Access</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;">
+                                <span style="color: #fff; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span style="color: white;">20% Trade Discount</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;">
+                                <span style="color: #fff; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span style="color: white;">Expert Masterclasses</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; display: flex; align-items: center;">
+                                <span style="color: #fff; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span style="color: white;">Monthly Swatch Kit</span>
+                            </li>
+                        </ul>
+                        <a href="register.html" class="btn" style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 8px; background: white; color: #667eea; font-weight: 600;">Join Now</a>
                     </div>
-                    <div class="card p-4 price-card">
-                        <div class="card-body">
-                            <h3>Bespoke</h3>
-                            <div class="price">Custom</div>
-                            <p>For large design houses.</p>
-                            <ul style="list-style: none; margin-bottom: 2rem; color: var(--text-muted);">
-                                <li>✓ Private Sourcing</li>
-                                <li>✓ OEM Manufacturing</li>
-                                <li>✓ Dedicated Account Mgr</li>
-                            </ul>
-                            <a href="connect.html" class="btn btn-outline" style="width: 100%;">Contact Us</a>
+
+                    <!-- Bespoke -->
+                    <div class="price-card-modern" style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid transparent; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #ffd700, #ffed4e);"></div>
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ffd700, #ffed4e); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem;">👑</div>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-dark);">Bespoke</h3>
+                            <div style="font-size: 3rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;">Custom</div>
+                            <p style="color: var(--text-muted);">For large design houses</p>
                         </div>
+                        <ul style="list-style: none; padding: 0; margin: 2rem 0;">
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span>Everything in Plus</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span>Private Sourcing</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span>OEM Manufacturing</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span>Dedicated Account</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; display: flex; align-items: center;">
+                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
+                                <span>Priority Support 24/7</span>
+                            </li>
+                        </ul>
+                        <a href="connect.html" class="btn btn-outline" style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 8px;">Contact Us</a>
                     </div>
                 </div>
             </div>
