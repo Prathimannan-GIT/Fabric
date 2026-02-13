@@ -1207,15 +1207,17 @@ input[type="checkbox"]:required:invalid {
         position: fixed;
         top: 0;
         left: -100%;
-        width: 80%;
+        width: 85%;
         height: 100vh;
+        max-height: 100vh;
+        overflow-y: auto;
         background: white;
         flex-direction: column;
-        padding: 6rem 2rem;
+        padding: 3rem 2rem 5rem 2rem;
         box-shadow: var(--shadow-lg);
         transition: 0.4s var(--ease-out);
         z-index: 1050;
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     .nav-menu.active {
@@ -1259,9 +1261,15 @@ input[type="checkbox"]:required:invalid {
 
     /* Single Column Layouts for Mobile */
     .grid-2,
-    .grid-3,
     .grid-4 {
         grid-template-columns: 1fr;
+    }
+
+    /* Override inline styles for mobile - force single column */
+    .desktop-three-cols {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
     }
 
     .hero h1 {
@@ -1554,8 +1562,15 @@ input[type="checkbox"]:required:invalid {
 
 /* Floating animation */
 @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
 }
 
 /* FAQ Accordion Styles */
@@ -1629,29 +1644,35 @@ input[type="checkbox"]:required:invalid {
     max-height: 300px;
 }
 
+/* Desktop Three Columns Override */
 /* Responsive Design */
 @media (max-width: 768px) {
     .contact-cards-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .contact-main-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
-    
+
     .form-row {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-    
+
     .contact-form-wrapper {
         padding: 2rem 1.5rem;
     }
-    
+
     .contact-card {
         padding: 2rem 1.5rem;
+    }
+
+    /* Override desktop-three-cols for mobile */
+    .desktop-three-cols {
+        grid-template-columns: 1fr !important;
     }
 }
 
@@ -1690,19 +1711,21 @@ input[type="checkbox"]:required:invalid {
     position: relative;
     z-index: 2;
 }
+
 .remember-wrapper {
-  margin-top: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .remember-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  white-space: nowrap; /* 🔥 prevents text breaking */
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    white-space: nowrap;
+    /* 🔥 prevents text breaking */
 }
 
 .remember-label input {
-  margin: 0;
+    margin: 0;
 }

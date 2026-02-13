@@ -185,6 +185,35 @@
             }
         }
 
+        /* CARD POINTS STYLING (GLOBAL) */
+        .price-card-modern ul {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            /* Keep points in a straight line */
+            width: fit-content !important;
+            margin: 2rem auto !important;
+            /* Center the list block */
+            padding: 0 !important;
+            list-style: none !important;
+        }
+
+        .price-card-modern li {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            width: 100% !important;
+            text-align: left !important;
+            white-space: nowrap !important;
+        }
+
+        .price-card-modern li span:first-child {
+            min-width: 24px !important;
+            margin-right: 0.5rem !important;
+            display: flex !important;
+            justify-content: center !important;
+        }
+
         @media (max-width: 900px) {
 
             .studio-spotlight .grid-2,
@@ -284,33 +313,56 @@
         /* Responsive Membership Plans Grid */
         @media (min-width: 1025px) {
             .membership-grid {
-                display: flex !important;
-                flex-direction: row !important;
-                gap: 2rem !important;
-                overflow-x: auto !important;
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 2.5rem !important;
+                overflow-x: visible !important;
             }
-            
+
             .membership-grid .price-card-modern {
-                flex: 0 0 auto !important;
-                min-width: 320px !important;
-                max-width: 380px !important;
+                flex: 1 1 auto !important;
+                min-width: unset !important;
+                max-width: unset !important;
             }
         }
 
         @media (max-width: 1024px) {
             .membership-grid {
-                display: flex !important;
-                flex-direction: row !important;
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
                 gap: 1.5rem !important;
-                overflow-x: auto !important;
+                overflow-x: visible !important;
             }
-            
+
             .membership-grid .price-card-modern {
-                flex: 0 0 auto !important;
-                min-width: 300px !important;
-                max-width: 350px !important;
+                flex: 1 1 auto !important;
+                min-width: unset !important;
+                max-width: unset !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
             }
-            
+
+            /* Removed overrides for ul and li to allow global centering and left alignment of points */
+            /* .price-card-modern ul {
+                width: 100% !important;
+            }
+
+            .price-card-modern li {
+                justify-content: center !important;
+            } */
+
+            .price-card-modern .btn {
+                padding: 0.75rem 1.5rem !important;
+                /* Smaller padding */
+                font-size: 1rem !important;
+                /* Smaller font */
+                width: auto !important;
+                /* Not forced to 100% if we want them smaller */
+                min-width: 180px !important;
+            }
+
             .price-card-modern.featured {
                 transform: scale(1) !important;
             }
@@ -323,13 +375,13 @@
                 gap: 1rem !important;
                 overflow-x: visible !important;
             }
-            
+
             .membership-grid .price-card-modern {
                 flex: unset !important;
                 min-width: unset !important;
                 max-width: unset !important;
             }
-            
+
             .price-card-modern {
                 padding: 2rem !important;
             }
@@ -354,6 +406,22 @@
         </a>
         <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
         <nav class="nav-menu">
+            <!-- Mobile Menu Branding -->
+            <div class="mobile-logo-wrap mobile-only"
+                style="margin-bottom: 2.5rem; width: 100%; border-bottom: 1px solid #eee; padding-bottom: 1.5rem;">
+                <a href="index.html" class="logo" style="justify-content: flex-start !important;">
+                    <span>
+                        <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="13" rx="2" ry="2"></rect>
+                            <circle cx="12" cy="13.5" r="4"></circle>
+                            <path d="M16 4h4v3h-4z"></path>
+                            <circle cx="12" cy="13.5" r="1.5" fill="currentColor"></circle>
+                        </svg>
+                    </span> Fabric
+                </a>
+            </div>
             <a href="index.html" class="nav-link">Studio</a>
             <a href="studio-plus.html" class="nav-link active">Studio Plus</a>
             <a href="collections.html" class="nav-link">Collections</a>
@@ -456,26 +524,43 @@
                 <h2>Why Go Plus?</h2>
                 <p>Elevate your craft with tools designed for professionals.</p>
 
-                <div class="grid-3">
-                    <div class="card p-4">
-                        <div class="card-body">
-                            <h3>Priority Access</h3>
+                <div class="grid-4" style="margin-top: 3rem;">
+                    <!-- Card 1: Priority -->
+                    <div class="card p-4"
+                        style="background: rgba(102, 126, 234, 0.05); border-top: 4px solid #667eea; transition: all 0.3s ease;">
+                        <div class="card-body text-center">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🚀</div>
+                            <h3 style="color: #667eea; font-weight: 700;">Priority Access</h3>
                             <p>Be the first to shop new collections 48 hours before launch.</p>
                         </div>
                     </div>
-                    <div class="card p-4">
-                        <div class="card-body">
-                            <h3>Master classes</h3>
+                    <!-- Card 2: Masterclasses -->
+                    <div class="card p-4"
+                        style="background: rgba(118, 75, 162, 0.05); border-top: 4px solid #764ba2; transition: all 0.3s ease;">
+                        <div class="card-body text-center">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🎓</div>
+                            <h3 style="color: #764ba2; font-weight: 700;">Master classes</h3>
                             <p>Unlimited access to video tutorials from industry experts.</p>
                         </div>
                     </div>
-                    <div class="card p-4">
-                        <div class="card-body">
-                            <h3>Premium classes</h3>
-                            <p>Limited training to video sessions from Clients.</p>
+                    <!-- Card 3: Premium -->
+                    <div class="card p-4"
+                        style="background: rgba(212, 175, 55, 0.05); border-top: 4px solid var(--secondary); transition: all 0.3s ease;">
+                        <div class="card-body text-center">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">💎</div>
+                            <h3 style="color: var(--secondary); font-weight: 700;">Premium classes</h3>
+                            <p>Limited training to video sessions from top-tier clients.</p>
                         </div>
                     </div>
-
+                    <!-- Card 4: Swatches -->
+                    <div class="card p-4"
+                        style="background: rgba(30, 136, 229, 0.05); border-top: 4px solid #1e88e5; transition: all 0.3s ease;">
+                        <div class="card-body text-center">
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🧵</div>
+                            <h3 style="color: #1e88e5; font-weight: 700;">Exclusive Swatches</h3>
+                            <p>Monthly delivery of curated fabric samples to your doorstep.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -513,29 +598,42 @@
             <div class="container">
                 <div class="text-center" style="margin-bottom: 3rem;">
                     <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-dark);">Membership Plans</h2>
-                    <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Choose the perfect plan for your creative journey and unlock exclusive benefits</p>
+                    <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Choose the
+                        perfect plan for your creative journey and unlock exclusive benefits</p>
                 </div>
-                
-                <div style="display: flex; gap: 2rem; max-width: 1200px; margin: 0 auto; overflow-x: auto;" class="membership-grid">
+
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto;"
+                    class="membership-grid">
                     <!-- Basic Studio -->
-                    <div class="price-card-modern" style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid transparent; transition: all 0.3s ease; position: relative; overflow: hidden;">
-                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #6c757d, #868e96);"></div>
+                    <div class="price-card-modern"
+                        style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid transparent; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <div
+                            style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #6c757d, #868e96);">
+                        </div>
                         <div style="text-align: center; margin-bottom: 2rem;">
-                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #6c757d, #868e96); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem;">🎨</div>
-                            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-dark);">Basic Studio</h3>
-                            <div style="font-size: 3rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;">Free</div>
+                            <div
+                                style="width: 60px; height: 60px; background: linear-gradient(135deg, #6c757d, #868e96); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem;">
+                                🎨</div>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-dark);">Basic Studio
+                            </h3>
+                            <div
+                                style="font-size: 3rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;">
+                                Free</div>
                             <p style="color: var(--text-muted);">Perfect for getting started</p>
                         </div>
                         <ul style="list-style: none; padding: 0; margin: 2rem 0;">
-                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                            <li
+                                style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
                                 <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
                                 <span>Standard Catalog </span>
                             </li>
-                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                            <li
+                                style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
                                 <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
                                 <span>Basic Video Tutorials</span>
                             </li>
-                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                            <li
+                                style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
                                 <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
                                 <span>Community Forum </span>
                             </li>
@@ -544,32 +642,43 @@
                                 <span>Priority Support</span>
                             </li>
                         </ul>
-                        <a href="register.html" class="btn btn-outline" style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 8px;">Get Started</a>
+                        <a href="register.html" class="btn btn-outline"
+                            style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 8px;">Get Started</a>
                     </div>
 
                     <!-- Studio Plus (Featured) -->
-                    <div class="price-card-modern featured" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; padding: 2.5rem; box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3); border: 2px solid #667eea; transform: scale(1.05); position: relative; overflow: hidden;">
-                        <div style="position: absolute; top: -20px; right: -20px; background: #ff6b6b; color: white; padding: 0.5rem 2rem; transform: rotate(45deg); font-size: 0.8rem; font-weight: 600;">POPULAR</div>
+                    <div class="price-card-modern featured"
+                        style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; padding: 2.5rem; box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3); border: 2px solid #667eea; transform: scale(1.05); position: relative; overflow: hidden;">
+                        <div
+                            style="position: absolute; top: -20px; right: -20px; background: #ff6b6b; color: white; padding: 0.5rem 2rem; transform: rotate(45deg); font-size: 0.8rem; font-weight: 600;">
+                            POPULAR</div>
                         <div style="text-align: center; margin-bottom: 2rem;">
-                            <div style="width: 70px; height: 70px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.8rem;">⭐</div>
+                            <div
+                                style="width: 70px; height: 70px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.8rem;">
+                                ⭐</div>
                             <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: white;">Studio Plus</h3>
-                            <div style="font-size: 3.5rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">$19<span style="font-size: 1.2rem; opacity: 0.8;">/mo</span></div>
+                            <div style="font-size: 3.5rem; font-weight: 700; color: white; margin-bottom: 0.5rem;">
+                                $19<span style="font-size: 1.2rem; opacity: 0.8;">/mo</span></div>
                             <p style="color: rgba(255,255,255,0.9);">Most popular choice</p>
                         </div>
                         <ul style="list-style: none; padding: 0; margin: 2rem 0;">
-                            <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;">
+                            <li
+                                style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;">
                                 <span style="color: #fff; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
                                 <span style="color: white;">Everything in Basic</span>
                             </li>
-                            <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;">
+                            <li
+                                style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;">
                                 <span style="color: #fff; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
                                 <span style="color: white;">Priority Vault Access</span>
                             </li>
-                            <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;">
+                            <li
+                                style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;">
                                 <span style="color: #fff; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
                                 <span style="color: white;">20% Trade Discount</span>
                             </li>
-                            <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;">
+                            <li
+                                style="padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center;">
                                 <span style="color: #fff; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
                                 <span style="color: white;">Expert Masterclasses</span>
                             </li>
@@ -578,41 +687,52 @@
                                 <span style="color: white;">Monthly Swatch Kit</span>
                             </li>
                         </ul>
-                        <a href="register.html" class="btn" style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 8px; background: white; color: #667eea; font-weight: 600;">Join Now</a>
+                        <a href="register.html" class="btn"
+                            style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 8px; background: white; color: #667eea; font-weight: 600;">Join
+                            Now</a>
                     </div>
 
                     <!-- Bespoke -->
-                    <div class="price-card-modern" style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid transparent; transition: all 0.3s ease; position: relative; overflow: hidden;">
-                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #ffd700, #ffed4e);"></div>
+                    <div class="price-card-modern"
+                        style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid transparent; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                        <div
+                            style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #ffd700, #ffed4e);">
+                        </div>
                         <div style="text-align: center; margin-bottom: 2rem;">
-                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ffd700, #ffed4e); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem;">👑</div>
+                            <div
+                                style="width: 60px; height: 60px; background: linear-gradient(135deg, #ffd700, #ffed4e); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem;">
+                                👑</div>
                             <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-dark);">Bespoke</h3>
-                            <div style="font-size: 3rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;">Custom</div>
+                            <div
+                                style="font-size: 3rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;">
+                                Custom</div>
                             <p style="color: var(--text-muted);">For large design houses</p>
                         </div>
                         <ul style="list-style: none; padding: 0; margin: 2rem 0;">
-                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                            <li
+                                style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
                                 <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
                                 <span>Everything in Plus</span>
                             </li>
-                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                            <li
+                                style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
                                 <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
                                 <span>Private Sourcing</span>
                             </li>
-                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                            <li
+                                style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
                                 <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
                                 <span>OEM Manufacturing</span>
                             </li>
-                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
+                            <li
+                                style="padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center;">
                                 <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
                                 <span>Dedicated Account</span>
                             </li>
-                            <li style="padding: 0.75rem 0; display: flex; align-items: center;">
-                                <span style="color: #28a745; margin-right: 0.75rem; font-size: 1.2rem;">✓</span>
-                                <span>Priority Support 24/7</span>
-                            </li>
+
                         </ul>
-                        <a href="connect.html" class="btn btn-outline" style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 8px;">Contact Us</a>
+                        <a href="connect.html" class="btn btn-outline"
+                            style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 8px;">Contact Us</a>
                     </div>
                 </div>
             </div>
