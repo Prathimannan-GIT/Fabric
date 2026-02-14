@@ -398,6 +398,54 @@ p {
     .auth-card-glass {
         max-width: 500px;
     }
+
+    /* Fix collections page grid and button alignment in tablet view */
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+    }
+
+    .grid-3 .card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        text-align: center;
+    }
+
+    .grid-3 .card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        padding: 2rem;
+        flex: 1;
+    }
+
+    .grid-3 .card h3 {
+        text-align: center !important;
+        margin: 0 auto 0.75rem auto !important;
+        align-self: center !important;
+        width: 100%;
+    }
+
+    .grid-3 .card p {
+        text-align: center !important;
+        margin: 0 auto 1.5rem auto !important;
+        align-self: center !important;
+        width: 100%;
+    }
+
+    .grid-3 .card .btn {
+        margin: 0 auto !important;
+        display: inline-flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        align-self: center !important;
+        width: auto !important;
+        min-width: 120px !important;
+    }
 }
 
 /* Header - Professional 3-Column Layout */
@@ -1191,6 +1239,74 @@ input[type="checkbox"]:required:invalid {
     .grid-4,
     .grid-3 {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Fix button alignment in tablet view for collections */
+    .grid-3 .card .btn,
+    .grid-4 .card .btn {
+        margin: 0 auto !important;
+        display: inline-flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        align-self: center !important;
+        width: auto !important;
+        min-width: 120px !important;
+    }
+
+    .grid-3 .card-body,
+    .grid-4 .card-body {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        text-align: center !important;
+    }
+
+    .grid-3 .card h3,
+    .grid-4 .card h3,
+    .grid-3 .card p,
+    .grid-4 .card p {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        align-self: center !important;
+    }
+}
+
+/* Additional specific tablet fix - Higher priority */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container .grid-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2rem !important;
+    }
+    
+    .container .grid-3 .card {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100% !important;
+    }
+    
+    .container .grid-3 .card-body {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        text-align: center !important;
+        flex: 1 !important;
+        padding: 2rem !important;
+    }
+    
+    .container .grid-3 .card .btn {
+        margin: 0 auto !important;
+        display: inline-flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        align-self: center !important;
+        width: auto !important;
+        min-width: 120px !important;
     }
 }
 
